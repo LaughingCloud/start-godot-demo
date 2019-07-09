@@ -1,0 +1,132 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://scripts/global.gd" type="Script" id=1]
+[ext_resource path="res://resource/star1.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://scripts/star1.gd" type="Script" id=3]
+[ext_resource path="res://resource/a.obj" type="ArrayMesh" id=4]
+[ext_resource path="res://scripts/obj1.gd" type="Script" id=5]
+[ext_resource path="res://resource/b.obj" type="ArrayMesh" id=6]
+[ext_resource path="res://scripts/obj2.gd" type="Script" id=7]
+[ext_resource path="res://resource/star2.obj" type="ArrayMesh" id=8]
+[ext_resource path="res://scripts/star2.gd" type="Script" id=9]
+[ext_resource path="res://scripts/obj3.gd" type="Script" id=10]
+[ext_resource path="res://resource/star3.obj" type="ArrayMesh" id=11]
+[ext_resource path="res://scripts/Button1.gd" type="Script" id=12]
+[ext_resource path="res://scripts/Button2.gd" type="Script" id=13]
+[ext_resource path="res://scripts/Camera1.gd" type="Script" id=14]
+[ext_resource path="res://scripts/cube1.gd" type="Script" id=15]
+[ext_resource path="res://scripts/label1.gd" type="Script" id=16]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 2.52008, 4.49301, 2.20676 )
+
+[sub_resource type="CubeMesh" id=2]
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Area" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8535, 11.3914, 5.96046e-008 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Area"]
+transform = Transform( 0.995603, 0.000585786, 0.0936703, -0.000605266, 1, 0.000179551, -0.0936702, -0.000235456, 0.995603, -0.748646, -6.8666, -1.62797 )
+shape = SubResource( 1 )
+
+[node name="CollisionPolygon" type="CollisionPolygon" parent="Area"]
+transform = Transform( 0.739696, -3.08397, -0.481984, 0.535983, 5.54404, 0, 0.406905, -1.69649, 0.87618, 13.8535, -11.3914, -5.96046e-008 )
+polygon = PoolVector2Array( 10.9338, 0.222826, 10.7589, 0.302021 )
+
+[node name="star1" type="MeshInstance" parent="."]
+transform = Transform( 0.0999978, -0.000671132, 0, 4.16582e-005, 0.00620701, -0.0998072, 0.000669838, 0.0998049, 0.00620715, -17.3604, 11, 0 )
+mesh = ExtResource( 2 )
+material/0 = null
+script = ExtResource( 3 )
+
+[node name="obj1" type="MeshInstance" parent="star1"]
+transform = Transform( 0.999977, 0.000416581, 0.00669838, -0.00671132, 0.0620701, 0.998049, 9.09494e-011, -0.998071, 0.0620715, 9.97061, -4.41202, 69.865 )
+mesh = ExtResource( 4 )
+material/0 = null
+script = ExtResource( 5 )
+
+[node name="obj2" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 9.3679 )
+mesh = ExtResource( 6 )
+material/0 = null
+script = ExtResource( 7 )
+
+[node name="star2" type="MeshInstance" parent="obj2"]
+transform = Transform( 0.1, 0, 0, 0, 0.0268104, -0.096339, 0, 0.096339, 0.0268104, 0, 5, 0 )
+mesh = ExtResource( 8 )
+material/0 = null
+script = ExtResource( 9 )
+
+[node name="obj3" type="MeshInstance" parent="."]
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 5.16753, 6.454, 0 )
+mesh = ExtResource( 4 )
+material/0 = null
+script = ExtResource( 10 )
+
+[node name="star3" type="MeshInstance" parent="obj3"]
+transform = Transform( 1, 0, 0, 0, -0.0501876, -0.99874, 0, 0.99874, -0.0501876, 25.3075, 79.5012, -8.9947 )
+mesh = ExtResource( 11 )
+material/0 = null
+
+[node name="Button1" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -491.223
+margin_top = 532.542
+margin_right = -422.223
+margin_bottom = 566.542
+rect_pivot_offset = Vector2( 194.5, 90 )
+toggle_mode = true
+script = ExtResource( 12 )
+
+[node name="Button2" type="Button" parent="."]
+anchor_left = 0.085
+anchor_top = 0.126
+anchor_right = 0.085
+anchor_bottom = 0.126
+margin_left = 865.127
+margin_top = 489.8
+margin_right = 936.127
+margin_bottom = 524.8
+script = ExtResource( 13 )
+
+[node name="Camera1" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 30 )
+current = true
+fov = 90.0
+near = 0.01
+far = 90.0
+script = ExtResource( 14 )
+
+[node name="Camera2" type="Camera" parent="."]
+transform = Transform( -0.392611, -0.912878, -0.111849, 0.0710637, -0.151362, 0.985921, 0.916955, -0.379135, -0.124299, 0, 30, 0 )
+fov = 94.3
+near = 0.01
+far = 90.0
+
+[node name="node1" type="Node" parent="."]
+
+[node name="cube1" type="MeshInstance" parent="node1"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -9.22587, 1.82488, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+script = ExtResource( 15 )
+
+[node name="label1" type="Label" parent="node1/cube1"]
+margin_left = 34.7154
+margin_top = 29.5471
+margin_right = 154.715
+margin_bottom = 74.5471
+rect_rotation = -0.281178
+script = ExtResource( 16 )
+
+[node name="depth_map" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="depth_map"]
+margin_right = 40.0
+margin_bottom = 40.0
