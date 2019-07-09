@@ -1,0 +1,9 @@
+[gd_scene format=2]
+
+[node name="minimap" type="Spatial"]
+
+[node name="camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.878113, 0.478453, 0, -0.478453, 0.878113, -0.779899, 24.3017, 53.0137 )
+current = true
+fov = 69.8
+near = 34.31
